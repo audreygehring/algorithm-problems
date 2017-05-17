@@ -1,14 +1,10 @@
 def unique(str)
   arr = str.split('')
-  counts = Hash.new
+  counts = Hash.new(0)
 
   if arr.length > 1
     arr.each do |char|
-      if counts[char]
         counts[char] += 1
-      else
-        counts[char] = 1
-      end
     end
 
     counts.each do |key, value|
