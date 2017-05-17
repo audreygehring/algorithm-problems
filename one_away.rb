@@ -7,24 +7,22 @@ def one_away(str1, str2)
     return false
   end
 end
+
 def replace(str1, str2)
-  arr1 = str1.split('').sort
-  arr2 = str2.split('').sort
-  puts "in replace"
   difference = false
-  for i in 0..arr1.length - 1
-    if arr1[i] != arr1[i]
+  for i in 0..str1.length - 1
+    if str1[i] != str2[i]
       if difference
-        return false;
+        return false
       else
         difference = true
       end
     end
   end
+  return difference
 end
 
 def insert(str1, str2)
-  puts "in insert"
   index1 = 0
   index2 = 0
 
@@ -42,4 +40,7 @@ def insert(str1, str2)
   end
 end
 
+puts one_away("pale", "ple")
+puts one_away("pales", "pale")
 puts one_away("pale", "bale")
+puts one_away("pale", "bake")
