@@ -33,13 +33,9 @@ test_data = [
 
 
 def most_popular(data)
-  hash = Hash.new
+  hash = Hash.new(0)
   data.each do |file|
-    if hash.include?(file[:category])
-      hash[file[:category]] += 1
-    else
-      hash[file[:category]] = 1
-    end
+    hash[file[:category]] += 1
   end
   # would have to figure out edge case for more than one "winner"
   hash.sort_by { |k, v| v }
